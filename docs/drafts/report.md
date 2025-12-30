@@ -8,7 +8,7 @@
 <div style="width: 80%; margin: 0 auto; font-size: 18px; line-height: 2.5;">
   <div><b>设计题目：</b> 基于 NI ELVIS III 的连续时间信号分析与采样系统设计</div>
   <div style="display: flex; justify-content: space-between;">
-    <span><b>姓名：</b> __________________</span>
+    <span><b>姓名：</b> _____reragoalina________</span>
     <span><b>学号：</b> __________________</span>
   </div>
   <div style="display: flex; justify-content: space-between;">

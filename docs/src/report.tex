@@ -5,6 +5,26 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+
+\lstset{
+    language=Python,
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    breakatwhitespace=false,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color[rgb]{0,0.6,0},
+    stringstyle=\color[rgb]{0.58,0,0.82},
+    extendedchars=false % 解决中文乱码问题（如果有）
+}
 
 % 设置页面边距
 \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
@@ -37,7 +57,7 @@
     {\Large \songti
     \renewcommand{\arraystretch}{2} % 行高
     \begin{tabular}{lc lc}
-        \textbf{设计题目：} & \multicolumn{3}{l}{基于 NI ELVIS III 的连续时间信号分析与采样系统设计} \\
+        \textbf{设计题目：} & \multicolumn{3}{l}{\underline{\makebox[12.5cm][c]{\resizebox{12cm}{!}{基于 NI ELVIS III 的连续时间信号分析与采样系统设计}}}} \\
         \textbf{姓名：} & \underline{\makebox[5cm]{}} & \textbf{学号：} & \underline{\makebox[5cm]{}} \\
         \textbf{班级：} & \underline{\makebox[5cm]{}} & \textbf{成绩：} & \underline{\makebox[5cm]{}} \\
     \end{tabular}

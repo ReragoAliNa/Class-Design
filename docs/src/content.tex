@@ -12,14 +12,14 @@
 \item
   \textbf{傅里叶级数与滤波器实验}：利用函数发生器产生周期方波信号，通过可调低通滤波器（TUNEABLE
   LPF），观测不同截止频率下的输出波形，验证周期信号的分解与合成原理
-  {[}cite: 34-36{]}。
+  。
 \item
   \textbf{连续时间系统时域分析}：构建一阶 RC
   电路，分别输入方波（近似阶跃信号）和窄脉冲（近似冲激信号），观测并分析一阶系统的阶跃响应与冲激响应
-  {[}cite: 47-48{]}。
+  。
 \item
   \textbf{采样与混叠实验}：利用乘法器（MULTIPLIER）模拟信号采样过程，改变采样频率（\(4000\text{Hz}, 2000\text{Hz}, 500\text{Hz}\)），验证奈奎斯特采样定理并观测混叠现象
-  {[}cite: 59-61{]}。
+  。
 \end{enumerate}
 
 \subsection{设计要求}
@@ -49,10 +49,10 @@ NI ELVIS III 平台实现。
   \begin{itemize}
   \item
     \textbf{实验一}：产生频率 \(100\text{Hz}\)、幅值 \(2\text{Vpp}\)
-    的周期方波 {[}cite: 38{]}。
+    的周期方波 。
   \item
     \textbf{实验二}：产生 \(50\text{Hz}\) 的方波（占空比
-    \(80\%\)）和窄脉冲（占空比 \(5\%\)） {[}cite: 51-52{]}。
+    \(80\%\)）和窄脉冲（占空比 \(5\%\)） 。
   \item
     \textbf{实验三}：产生 \(1000\text{Hz}\)
     正弦波作为被采样信号，以及不同频率的方波作为采样脉冲 {[}cite:
@@ -95,11 +95,12 @@ RC 电路是典型的一阶线性时不变（LTI）系统。其电容电压 \(u_
 
 \[RC \frac{du_c(t)}{dt} + u_c(t) = u_s(t)\]
 
-其中 \(\tau = RC\) 为时间常数。 *
-\textbf{阶跃响应}：当输入为阶跃信号时，电容充电，输出按
-\(1 - e^{-t/\tau}\) 规律上升。 *
-\textbf{冲激响应}：当输入为冲激信号时，电容瞬间充电后通过电阻放电，输出按
-\(e^{-t/\tau}\) 规律衰减。
+其中 \(\tau = RC\) 为时间常数。
+
+\begin{itemize}
+    \item \textbf{阶跃响应}：当输入为阶跃信号时，电容充电，输出按 \(1 - e^{-t/\tau}\) 规律上升。
+    \item \textbf{冲激响应}：当输入为冲激信号时，电容瞬间充电后通过电阻放电，输出按 \(e^{-t/\tau}\) 规律衰减。
+\end{itemize}
 
 \subsection{采样定理与混叠}
 
@@ -108,9 +109,12 @@ RC 电路是典型的一阶线性时不变（LTI）系统。其电容电压 \(u_
 
 \[f_s > 2f_{max}\]
 
-本实验中 \(f_{max} = 1000\text{Hz}\)。 * 当 \(f_s = 4000\text{Hz}\)
-时，满足采样定理，信号可恢复。 * 当
-\(f_s = 500\text{Hz}\)时，\(f_s < 2f_{max}\)，发生频谱混叠（Aliasing）。高频信号折叠到低频段\(|f_s - f_{signal}| = |500 - 1000| = 500\text{Hz}\)，导致恢复出的信号频率错误。
+本实验中 \(f_{max} = 1000\text{Hz}\)。
+
+\begin{itemize}
+    \item 当 \(f_s = 4000\text{Hz}\) 时，满足采样定理，信号可恢复。
+    \item 当 \(f_s = 500\text{Hz}\) 时，\(f_s < 2f_{max}\)，发生频谱混叠（Aliasing）。高频信号折叠到低频段\(|f_s - f_{signal}| = |500 - 1000| = 500\text{Hz}\)，导致恢复出的信号频率错误。
+\end{itemize}
 
 \section{性能分析}
 
@@ -250,15 +254,13 @@ RC 电路是典型的一阶线性时不变（LTI）系统。其电容电压 \(u_
 ADC 前端必须加装抗混叠滤波器的重要性。 3. \textbf{电路控制}：RC
 电路的响应特性广泛应用于去抖动电路及 PID 控制器的积分/微分环节设计。
 
-\section{参考文献}
 
-{[}1{]} 信号处理综合课程设计 - NI 实验册.
 
 \section{附录：仿真代码}
 
 以下为生成上述波形图的 Python 代码（文件位于项目根目录 \texttt{python/generate\_waves.py}）：
 
-\begin{verbatim}
+\begin{lstlisting}
 import numpy as np
 import matplotlib.pyplot as plt
 import os
@@ -267,4 +269,4 @@ import os
 BASE_IMAGES_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'images')
 
 # ... (其余代码与 python/generate_waves.py 一致)
-\end{verbatim}
+\end{lstlisting}

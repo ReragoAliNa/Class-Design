@@ -9,6 +9,8 @@ docs/texCache/
 *.synctex.gz
 *.pdf
 
+docs/drafts/*
+
 # Keep the final report PDF if it's in the docs root (optional, remove if you only want it in cache)
 !docs/report.pdf
 
